@@ -15,7 +15,7 @@ import android.util.Log;
 
 import com.example.adaministrator.myapplication.R;
 
-import static com.example.adaministrator.myapplication.aidl.Constants.MEG_FROM_SERVICE;
+import static com.example.adaministrator.myapplication.aidl.Constants.MSG_FROM_SERVICE;
 
 /**
  * Created by Adaministrator on 2017/10/16.
@@ -29,7 +29,7 @@ public class MessengerActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             mService = new Messenger(service);
-            Message msg = Message.obtain(null, Constants.MEG_FROM_CLIENT);
+            Message msg = Message.obtain(null, Constants.MSG_FROM_CLIENT);
             Bundle data = new Bundle();
             data.putString("msg", "hello, this is client.");
             msg.setData(data);
@@ -53,7 +53,7 @@ public class MessengerActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case MEG_FROM_SERVICE:
+                case MSG_FROM_SERVICE:
                     Log.i(TAG, "receive msg from Service:" + msg.getData().getString("reply"));
                     break;
                 default:

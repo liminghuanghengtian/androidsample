@@ -10,8 +10,8 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
 
-import static com.example.adaministrator.myapplication.aidl.Constants.MEG_FROM_CLIENT;
-import static com.example.adaministrator.myapplication.aidl.Constants.MEG_FROM_SERVICE;
+import static com.example.adaministrator.myapplication.aidl.Constants.MSG_FROM_CLIENT;
+import static com.example.adaministrator.myapplication.aidl.Constants.MSG_FROM_SERVICE;
 
 public class MessengerService extends Service {
     public static final String TAG = MessengerService.class.getSimpleName();
@@ -21,10 +21,10 @@ public class MessengerService extends Service {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case MEG_FROM_CLIENT:
+                case MSG_FROM_CLIENT:
                     Log.i(TAG, "receive msg from client:" + msg.getData().getString("msg"));
                     Messenger client = msg.replyTo;
-                    Message replyMsg = Message.obtain(null, MEG_FROM_SERVICE);
+                    Message replyMsg = Message.obtain(null, MSG_FROM_SERVICE);
                     Bundle bundle = new Bundle();
                     bundle.putString("reply", "嗯，你的消息我已收到，稍后会回复你。");
                     replyMsg.setData(bundle);

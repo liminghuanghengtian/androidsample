@@ -21,3 +21,14 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    COMPILE_SDK_VERSION = 26
+    BUILD_TOOLS_VERSION = "26.0.1"
+    APPLICATION_ID = "com.example.adaministrator.myapplication"
+    MIN_SDK_VERSION = 21
+    TARGET_SDK_VERSION = 26
+    VERSION_CODE = 1
+    VERSION_NAME = "1.0"
+    SUPPORT_VERSION = "26.+"
+}

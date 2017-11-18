@@ -5,6 +5,6 @@ package com.example.adaministrator.myapplication.aidl;
  */
 
 public class Constants {
-    public static final int MEG_FROM_CLIENT = 0x11;
-    public static final int MEG_FROM_SERVICE = 0x12;
+    public static final int MSG_FROM_CLIENT = 0x11;
+    public static final int MSG_FROM_SERVICE = 0x12;
 }
