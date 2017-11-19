@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.adaministrator.myapplication.R;
 import com.example.adaministrator.myapplication.bilibili.BliBliActivity;
@@ -19,9 +20,16 @@ import com.example.adaministrator.myapplication.bilibili.BliBliActivity;
  */
 
 public class FeatureTestActivity extends AppCompatActivity {
+
+    private TextView mTvNdkContent;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_ndk_test);
+        mTvNdkContent = (TextView) findViewById(R.id.tv_ndk_content);
+//        Log.i("Activity",);
+
         Notification.Builder builder = new Notification.Builder(this)
                 .setContentTitle("New mail from liminghuang")// 标题
                 .setContentText("今晚去哪里吃饭啊？")// 详细文本

@@ -1,14 +1,14 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.COMPILE_SDK_VERSION
     buildToolsVersion rootProject.ext.BUILD_TOOLS_VERSION
     defaultConfig {
-        applicationId rootProject.ext.APPLICATION_ID
         minSdkVersion rootProject.ext.MIN_SDK_VERSION
         targetSdkVersion rootProject.ext.TARGET_SDK_VERSION
-        versionCode rootProject.ext.VERSION_CODE
-        versionName rootProject.ext.VERSION_NAME
+        versionCode 1
+        versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -26,16 +26,5 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile "com.android.support:appcompat-v7:$supportVersion"
-    compile "com.android.support:design:$supportVersion"
-    compile "com.android.support:cardview-v7:$supportVersion"
-
-//    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile 'com.github.ctiao:DanmakuFlameMaster:0.9.12'
-    compile 'com.github.ctiao:ndkbitmap-armv7a:0.9.12'
-
-//    Other ABIs: optional
-    compile 'com.github.ctiao:ndkbitmap-armv5:0.9.12'
-    compile 'com.github.ctiao:ndkbitmap-x86:0.9.12'
-    compile project(":moduleupgrade")
 }
