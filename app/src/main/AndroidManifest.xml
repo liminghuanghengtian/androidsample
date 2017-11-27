@@ -31,7 +31,6 @@
             android:name=".log.SystemLogTestActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
         <activity android:name=".lollipop.FeatureTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -44,10 +43,17 @@
             android:name=".aidl.MessengerService"
             android:process=":remote">
         </service>
+
         <activity
             android:name=".aidl.MessengerActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <service
+            android:name=".aidl.AidlService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>
