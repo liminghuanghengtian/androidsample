@@ -1,1 +1,1 @@
-include ':app', ':modulelog', ':moduleupgrade', ':modulerouter'
+include ':app', ':modulelog', ':moduleupgrade', ':modulerouter', ':modulekit', ':apt-lib', ':apt-process', ':modulehotfix'

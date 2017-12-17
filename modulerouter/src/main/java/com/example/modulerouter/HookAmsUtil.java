@@ -59,7 +59,7 @@ public class HookAmsUtil {
             Log.i("HookAmsUtil", "handleMessage");
             //替换之前的Intent
             if (msg.what ==100) {
-                Log.i("HookAmsUtil","lauchActivity");
+                Log.i("HookAmsUtil","launchActivity");
                 handleLauchActivity(msg);
             }
 
