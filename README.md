@@ -22,3 +22,10 @@
 # 框架整理
 1. 网络框架token失效的刷新的机制，参考rxjava#Retry重试转回业务请求
 2. 好使的工具类收集
+
+# 网络资源
+1. [Android插件化原理解析](http://www.cnblogs.com/ZhangXiangQian/p/5386029.html)
+2. [美团Android DEX自动拆包及动态加载简介](http://tech.meituan.com/mt-android-auto-split-dex.html)
+3. [利用 DexClassLoader 实现 Android 插件化，从而达到动态加载](http://get.ftqq.com/987.get)
+4. [Android动态加载技术系列索引](https://segmentfault.com/a/1190000004086213)
+5. [Android 动态加载dex](http://blog.dreamtobe.cn/2015/12/07/android_dynamic_dex/)
