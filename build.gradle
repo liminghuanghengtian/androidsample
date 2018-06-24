@@ -39,7 +39,7 @@ ext {
 import groovy.json.JsonSlurper
 def getTenantVersionName(def apkName) {
     //请求的打包信息的服务器地址
-    def urlString = "http://xxxxxx?appName=${apkName}"
+    def urlString = "http://www.baidu.com?appName=${apkName}"
     def url = new URL(urlString)
     def packageInfoResult = null
     HttpURLConnection conn = (HttpURLConnection) url.openConnection()
