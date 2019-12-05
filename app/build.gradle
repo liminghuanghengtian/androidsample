@@ -3,20 +3,26 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
 android {
+
     compileSdkVersion rootProject.ext.COMPILE_SDK_VERSION
     buildToolsVersion rootProject.ext.BUILD_TOOLS_VERSION
+
+    def serverConfig = null/*getTenantVersionName("test")*/
     defaultConfig {
-        applicationId rootProject.ext.APPLICATION_ID
-        minSdkVersion rootProject.ext.MIN_SDK_VERSION
-        targetSdkVersion rootProject.ext.TARGET_SDK_VERSION
-        versionCode rootProject.ext.VERSION_CODE
-        versionName rootProject.ext.VERSION_NAME
+        applicationId serverConfig ? serverConfig.applicationId : rootProject.ext.APPLICATION_ID
+        minSdkVersion serverConfig ? serverConfig.minSdkVersion : rootProject.ext.MIN_SDK_VERSION
+        targetSdkVersion serverConfig ? serverConfig.targetSdkVersion : rootProject.ext.TARGET_SDK_VERSION
+        versionCode serverConfig ? serverConfig.versionCode : rootProject.ext.VERSION_CODE
+        versionName serverConfig ? serverConfig.versionName : rootProject.ext.VERSION_NAME
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    def APP_SERVER = serverConfig ? serverConfig.appServer : "\"https://abc\""
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "APP_SERVER", APP_SERVER
         }
     }
 }
