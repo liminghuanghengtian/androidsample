@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.example.adaministrator.myapplication.R;
@@ -28,7 +27,8 @@ public class FeatureTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ndk_test);
         mTvNdkContent = (TextView) findViewById(R.id.tv_ndk_content);
-//        Log.i("Activity",);
+        // Log.i("Activity", "这行不会删除");
+        android.util.Log.i("Activity", "原先的log日志打印语句已被删除");
 
         Notification.Builder builder = new Notification.Builder(this)
                 .setContentTitle("New mail from liminghuang")// 标题
@@ -71,6 +71,6 @@ public class FeatureTestActivity extends AppCompatActivity {
     @Override
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Log.i("FeatureTestActivity", "onNewIntent");
+        android.util.Log.i("FeatureTestActivity", "onNewIntent");
     }
 }

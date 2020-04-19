@@ -1,7 +1,5 @@
 package com.example.adaministrator.myapplication.hook;
 
-import android.util.Log;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -37,9 +35,9 @@ public class ProxyHandler implements InvocationHandler {
         // 这里就可以进行所谓的AOP编程了
         // 在调用具体函数方法前，执行功能处理
         String methodName = method.getName();
-        Log.i("invoke", "before invoke " + methodName);
+;
         result = method.invoke(tar, args);
-        Log.i("invoke", "after invoke " + methodName);
+;
         //在调用具体函数方法后，执行功能处理
         return result;
     }

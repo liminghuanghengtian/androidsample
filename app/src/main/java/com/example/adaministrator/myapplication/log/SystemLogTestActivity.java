@@ -33,12 +33,12 @@ public class SystemLogTestActivity extends AppCompatActivity {
 
         String[] args = {"/system/bin/cat proc/stat", "/system/bin/cat proc/cpuinfo"};
         String cpuInfo = getInfoFromProc(args);
-        Log.i("cpuInfo", cpuInfo);
+;
         mCpuInfo.setText(cpuInfo);
 
         String[] args1 = {"/system/bin/cat proc/meminfo"};
         String memInfo = getInfoFromProc(args1);
-        Log.i("memInfo", memInfo);
+;
         mMemInfo.setText(memInfo);
     }
 

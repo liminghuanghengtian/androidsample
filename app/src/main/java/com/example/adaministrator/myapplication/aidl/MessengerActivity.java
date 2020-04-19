@@ -43,7 +43,7 @@ public class MessengerActivity extends AppCompatActivity {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            Log.i(TAG, "Service disconnected!");
+;
         }
     };
 
@@ -54,7 +54,7 @@ public class MessengerActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MSG_FROM_SERVICE:
-                    Log.i(TAG, "receive msg from Service:" + msg.getData().getString("reply"));
+;
                     break;
                 default:
                     super.handleMessage(msg);

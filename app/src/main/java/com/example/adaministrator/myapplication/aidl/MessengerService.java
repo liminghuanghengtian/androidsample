@@ -8,7 +8,6 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.util.Log;
 
 import static com.example.adaministrator.myapplication.aidl.Constants.MSG_FROM_CLIENT;
 import static com.example.adaministrator.myapplication.aidl.Constants.MSG_FROM_SERVICE;
@@ -22,7 +21,7 @@ public class MessengerService extends Service {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MSG_FROM_CLIENT:
-                    Log.i(TAG, "receive msg from client:" + msg.getData().getString("msg"));
+;
                     Messenger client = msg.replyTo;
                     Message replyMsg = Message.obtain(null, MSG_FROM_SERVICE);
                     Bundle bundle = new Bundle();
