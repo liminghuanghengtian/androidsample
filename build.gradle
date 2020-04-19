@@ -3,11 +3,21 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        maven {
+//            url uri("H:/ASProjects/MyApplication/repo")
+            url uri("/repo")
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
-        //添加APT依赖
+        // 添加APT依赖
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        // 添加自定义插件
+        classpath 'com.example.gradle.plugin:dellog:1.0.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -17,6 +27,10 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 
@@ -37,6 +51,7 @@ ext {
 
 //导入groovy的Json解析
 import groovy.json.JsonSlurper
+
 def getTenantVersionName(def apkName) {
     //请求的打包信息的服务器地址
     def urlString = "http://www.baidu.com?appName=${apkName}"
@@ -46,7 +61,7 @@ def getTenantVersionName(def apkName) {
     conn.setRequestMethod('GET')
     conn.setConnectTimeout(5000)
     int code = conn.getResponseCode()
-    if(code == 200) {
+    if (code == 200) {
         //请求成功
         InputStream is = conn.getInputStream()
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -64,4 +79,14 @@ def getTenantVersionName(def apkName) {
         packageInfoResult = JsonSlurper.parseText(result)
     }
     return packageInfoResult
+}
+
+task printProps {
+    doLast {
+        println commandLineProjectProp
+        println gradlePropertiesProp
+        println systemProjectProp
+        println envProjectProp
+        println System.properties['system']
+    }
 }
