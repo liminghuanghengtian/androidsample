@@ -32,11 +32,11 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".lollipop.FeatureTestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
 
         <service
@@ -54,6 +54,14 @@
             android:enabled="true"
             android:exported="true">
         </service>
+
+        <activity android:name=".RxJavaActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
